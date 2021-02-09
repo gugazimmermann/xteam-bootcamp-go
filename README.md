@@ -1,3 +1,4 @@
-# xteam-bootcamp-go
+# Coursera - Programming with Google Go Specialization
+https://www.coursera.org/specializations/google-golang
 
-X-Team Go Bootcamp, by Juliano Silva - https://www.linkedin.com/in/juliano-silva-de-souza/
+## Part 1 - Module 2 Activity
