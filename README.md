@@ -1,6 +1,8 @@
 # Coursera - Programming with Google Go Specialization
-
 https://www.coursera.org/specializations/google-golang
+
+# Part 1 - Getting Started with Go
+https://www.coursera.org/learn/golang-getting-started
 
 
 ## Part 1 - Module 4 - Final Course Activity: read.go
