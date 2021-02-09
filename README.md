@@ -3,7 +3,7 @@
 https://www.coursera.org/specializations/google-golang
 
 
-## Final Course Activity: read.go
+## Part 1 - Module 4 - Final Course Activity: read.go
 
 Write a program which reads information from a file and represents it in a slice of structs. Assume that there is a text file which contains a series of names. Each line of the text file has a first name and a last name, in that order, separated by a single space on the line. 
 
