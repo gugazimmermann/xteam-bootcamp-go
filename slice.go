@@ -33,10 +33,8 @@ func main() {
 			i, err := strconv.Atoi(n)
 			if err == nil {
 				if x < len(ints) {
-					fmt.Println("x: ", x)
 					ints[0] = i
 				} else {
-					fmt.Println("x: ", x)
 					ints = append(ints, i)
 				}
 				x += 1
