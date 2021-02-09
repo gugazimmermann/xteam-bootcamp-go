@@ -3,7 +3,7 @@
 https://www.coursera.org/specializations/google-golang
 
 
-## Module 3 Activity: slice.go
+## Part 1 - Module 3 Activity: slice.go
 
 Write a program which prompts the user to enter integers and stores the integers in a sorted slice.
 
