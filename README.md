@@ -18,14 +18,17 @@ Certificate: https://coursera.org/share/105409475157221238470ce702ab7148
 * Module 1: Getting Started with Go
 
 * Module 2: Basic Data Types
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-2-activity-findian-go
 
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-2-activity-trunc-go
 
 * Module 3: Composite Data Types
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-3-activity-slice
 
 * Module 4: Protocols and Formats
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-4-activity-makejson.go
 
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-final-course-activity-read.go
@@ -35,12 +38,15 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-final-course-a
 https://www.coursera.org/learn/golang-functions-methods
 
 * Module 1: Functions and Organization
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-1-activity-bubble-sort-program
 
 * Module 2: Function Types
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-2-activity-linear-kinematics
 
 * Module 3: Object Orientation in Go
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-3-activity-objects
 
 * Module 4: Interfaces for abstraction
