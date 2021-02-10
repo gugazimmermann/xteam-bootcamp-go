@@ -13,6 +13,7 @@ https://www.coursera.org/specializations/google-golang
 https://www.coursera.org/learn/golang-getting-started
 
 ![certificate](go-1.png "certificate")
+
 Certificate: https://coursera.org/share/105409475157221238470ce702ab7148
 
 * Module 1: Getting Started with Go
