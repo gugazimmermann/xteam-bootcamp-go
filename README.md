@@ -51,6 +51,8 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-
 
 * Module 4: Interfaces for abstraction
 
+https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-4-interfaces
+
 
 ### Part 3 - Concurrency in Go
 https://www.coursera.org/learn/golang-concurrency
