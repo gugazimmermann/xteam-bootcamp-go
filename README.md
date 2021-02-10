@@ -1,6 +1,7 @@
 # X-Team Go Bootcamp
 
 https://www.linkedin.com/in/juliano-silva-de-souza/
+
 https://github.com/julianosouza/go-crash-course
 
 ---
@@ -18,6 +19,7 @@ Certificate: https://coursera.org/share/105409475157221238470ce702ab7148
 
 * Module 2: Basic Data Types
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-2-activity-findian-go
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-2-activity-trunc-go
 
 * Module 3: Composite Data Types
@@ -25,6 +27,7 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-3-activ
 
 * Module 4: Protocols and Formats
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-module-4-activity-makejson.go
+
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-final-course-activity-read.go
 
 
