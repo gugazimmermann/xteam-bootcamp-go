@@ -5,26 +5,22 @@ https://www.coursera.org/specializations/google-golang
 https://www.coursera.org/learn/golang-functions-methods
 
 
-## Module 2 Activity: Linear Kinematics
+## Module 3 Activity: Information about a set of predefined objects
 
-Let us assume the following formula for displacement s as a function of time t, acceleration a, initial velocity vo, and initial displacement so.
+Write a program which allows the user to get information about a predefined set of animals. Three animals are predefined, cow, bird, and snake. Each animal can eat, move, and speak. The user can issue a request to find out one of three things about an animal:
 
-```
-s = ½ a t2 + vot + so
-```
+1) the food that it eats
+2) its method of locomotion
+3) the sound it makes when it speaks
 
-Write a program which first prompts the user to enter values for acceleration, initial velocity, and initial displacement. Then the program should prompt the user to enter a value for time and the program should compute the displacement after the entered time.
+The following table contains the three animals and their associated data which should be hard-coded into your program.
 
-You will need to define and use a function called GenDisplaceFn() which takes three float64 arguments, acceleration a, initial velocity vo, and initial displacement so. GenDisplaceFn()  should return a function which computes displacement as a function of time, assuming the given values acceleration, initial velocity, and initial displacement. The function returned by GenDisplaceFn() should take one float64 argument t, representing time, and return one float64 argument which is the displacement travelled after time t.
+| Animal        | Food eaten    | Locomotion method | Spoken sound |
+|:-------------:|:-------------:|:-----------------:|:------------:|
+| cow           | grass         | walk              | moo          |
+| bird          | worms         | fly               | peep         |
+| snake         | mice          | slither           | hsss         |
 
-For example, let’s say that I want to assume the following values for acceleration, initial velocity, and initial displacement: a = 10, vo = 2, so = 1. I can use the following statement to call GenDisplaceFn() to generate a function fn which will compute displacement as a function of time.
+Your program should present the user with a prompt, “>”, to indicate that the user can type a request. Your program accepts one request at a time from the user, prints out the answer to the request, and prints out a new prompt. Your program should continue in this loop forever. Every request from the user must be a single line containing 2 strings. The first string is the name of an animal, either “cow”, “bird”, or “snake”. The second string is the name of the information requested about the animal, either “eat”, “move”, or “speak”. Your program should process each request by printing out the requested data.
 
-fn := GenDisplaceFn(10, 2, 1)
-
-Then I can use the following statement to print the displacement after 3 seconds.
-
-fmt.Println(fn(3))
-
-And I can use the following statement to print the displacement after 5 seconds.
-
-fmt.Println(fn(5))
+You will need a data structure to hold the information about each animal. Make a type called Animal which is a struct containing three fields: food, locomotion, and noise, all of which are strings. Make three methods called Eat(), Move(), and Speak(). The receiver type of all of your methods should be your Animal type. The Eat() method should print the animal’s food, the Move() method should print the animal’s locomotion, and the Speak() method should print the animal’s spoken sound. Your program should call the appropriate method when the user makes a request.
