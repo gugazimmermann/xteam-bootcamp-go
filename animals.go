@@ -65,18 +65,20 @@ func delete_empty(s []string) []string {
 }
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("> ")
-	input, _ := reader.ReadString('\n')
-	a := delete_empty(strings.Split(strings.TrimSpace(input), " "))
-	switch a[0] {
-	case "cow":
-		info(a[1], cow)
-	case "bird":
-		info(a[1], bird)
-	case "snake":
-		info(a[1], snake)
-	default:
-		fmt.Println("Animal not found")
+	for {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Print("> ")
+		input, _ := reader.ReadString('\n')
+		a := delete_empty(strings.Split(strings.TrimSpace(input), " "))
+		switch a[0] {
+		case "cow":
+			info(a[1], cow)
+		case "bird":
+			info(a[1], bird)
+		case "snake":
+			info(a[1], snake)
+		default:
+			fmt.Println("Animal not found")
+		}
 	}
 }
