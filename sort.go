@@ -15,23 +15,6 @@ type names struct {
 	lname string
 }
 
-func bubbleSort(intSlice []int) {
-	for i := len(intSlice); i > 0; i-- {
-		for j := 1; j < i; j++ {
-			swap(intSlice, j)
-		}
-	}
-	fmt.Println(intSlice)
-}
-
-func swap(intSlice []int, j int) {
-	if intSlice[j-1] > intSlice[j] {
-		intermediate := intSlice[j]
-		intSlice[j] = intSlice[j-1]
-		intSlice[j-1] = intermediate
-	}
-}
-
 func formatToIntSlice(input string) []int {
 	return stringToInt(strings.Split(strings.Replace(strings.Replace(input, "\n", "", -1), "\r", "", -1), ","))
 }
