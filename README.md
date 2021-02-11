@@ -5,6 +5,6 @@ https://www.coursera.org/specializations/google-golang
 https://www.coursera.org/learn/golang-concurrency
 
 
-## Module 1 Activity: Race Condition
+## Module 2 Activity: Race Condition
 
 Write two goroutines which have a race condition when executed concurrently. Explain what the race condition is and how it can occur.
