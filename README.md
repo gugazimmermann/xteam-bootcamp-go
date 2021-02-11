@@ -7,9 +7,11 @@ https://github.com/julianosouza/go-crash-course
 ---
 
 # Coursera - Programming with Google Go Specialization
+
 https://www.coursera.org/specializations/google-golang
 
 ### Part 1 - Getting Started with Go
+
 https://www.coursera.org/learn/golang-getting-started
 
 ![certificate](go-1.png "certificate")
@@ -36,6 +38,7 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-final-course-a
 
 
 ### Part 2 - Functions, Methods, and Interfaces in Go
+
 https://www.coursera.org/learn/golang-functions-methods
 
 * Module 1: Functions and Organization
@@ -56,9 +59,12 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-
 
 
 ### Part 3 - Concurrency in Go
+
 https://www.coursera.org/learn/golang-concurrency
 
 * Module 1: Why Use Concurrency?
+
+https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-1-moores-law
 
 * Module 2: Concurrency Basics
 
