@@ -5,6 +5,6 @@ https://www.coursera.org/specializations/google-golang
 https://www.coursera.org/learn/golang-concurrency
 
 
-## Module 1 Activity: Define Moore’s law
+## Module 1 Activity: Race Condition
 
-Define Moore’s law and explain why it has now stopped being true. Be sure to describe all of the physical limitations that have prevented Moore’s law from continuing to be true.
+Write two goroutines which have a race condition when executed concurrently. Explain what the race condition is and how it can occur.
