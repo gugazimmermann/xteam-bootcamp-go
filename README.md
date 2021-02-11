@@ -72,6 +72,8 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-
 
 * Module 3: Threads in Go
 
+https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-3-threads
+
 * Module 4: Syncronized Communication
 
 ---
