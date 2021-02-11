@@ -42,10 +42,13 @@ func main() {
 	inputSO, _ := reader.ReadString('\n')
 	so := formatToFloat64(inputSO)
 
-	fn := GenDisplaceFn(a, vo, so)
-	fmt.Println("Displacement after 3 seconds: ")
-	fmt.Println(fn(3))
+	fmt.Println("Please, enter the value for time:")
+	fmt.Print("-> ")
+	inputT, _ := reader.ReadString('\n')
+	t := formatToFloat64(inputT)
 
-	fmt.Println("Displacement after 5 seconds: ")
-	fmt.Println(fn(5))
+	fn := GenDisplaceFn(a, vo, so)
+	fmt.Printf("Displacement after %v seconds: ", t)
+	fmt.Println(fn(t))
+
 }
