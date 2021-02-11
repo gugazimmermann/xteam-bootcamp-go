@@ -68,6 +68,8 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-
 
 * Module 2: Concurrency Basics
 
+https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-2-race-condition
+
 * Module 3: Threads in Go
 
 * Module 4: Syncronized Communication
