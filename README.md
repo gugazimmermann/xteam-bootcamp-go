@@ -41,6 +41,10 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-final-course-a
 
 https://www.coursera.org/learn/golang-functions-methods
 
+![certificate](go-2.png "certificate")
+
+Certificate: https://coursera.org/share/3ba539e1306b42678db27efcfbc2fb5e
+
 * Module 1: Functions and Organization
 
 https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-1-activity-bubble-sort-program
