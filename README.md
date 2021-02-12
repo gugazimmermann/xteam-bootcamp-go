@@ -80,6 +80,8 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-
 
 * Module 4: Syncronized Communication
 
+https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-3-module-3-dining-philosophers
+
 ---
 #### Resources
 
