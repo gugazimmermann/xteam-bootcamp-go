@@ -10,6 +10,10 @@ https://github.com/julianosouza/go-crash-course
 
 https://www.coursera.org/specializations/google-golang
 
+![certificate](go-final.png "certificate")
+
+Certificate: https://coursera.org/share/6ffa93a3ba674c6f165e91673546a844
+
 ### Part 1 - Getting Started with Go
 
 https://www.coursera.org/learn/golang-getting-started
@@ -65,6 +69,10 @@ https://github.com/gugazimmermann/xteam-bootcamp-go/tree/coursera-part-2-module-
 ### Part 3 - Concurrency in Go
 
 https://www.coursera.org/learn/golang-concurrency
+
+![certificate](go-3.png "certificate")
+
+Certificate: https://coursera.org/share/495f27f45a4c7e0ee19bf6475c165789
 
 * Module 1: Why Use Concurrency?
 
