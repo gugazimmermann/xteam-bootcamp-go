@@ -1,152 +1,75 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"log"
-)
+import "fmt"
 
-func seeError(b bool) (string, error) {
-	if !b {
-		return "", errors.New("b is false")
-	}
-	return "b is true", nil
+type Cow struct {
+	name, food, locomotion, noise string
 }
 
-type cat struct {
-	name string
+type Bird struct {
+	name, food, locomotion, noise string
 }
-type dog struct {
-	name string
+
+type Snake struct {
+	name, food, locomotion, noise string
 }
-type snake struct {
-	name string
+type Animals interface {
+	Name() string
+	Eat()
+	Move()
+	Speak()
+}
+
+func (c Cow) Name() string {
+	return c.name
+}
+func (c Cow) Eat() {
+	fmt.Println("eat: " + c.food)
+}
+func (c Cow) Move() {
+	fmt.Println("move: " + c.locomotion)
+}
+func (c Cow) Speak() {
+	fmt.Println("speak: " + c.noise)
+}
+
+func (b Bird) Name() string {
+	return b.name
+}
+func (b Bird) Eat() {
+	fmt.Println("eat: " + b.food)
+}
+func (b Bird) Move() {
+	fmt.Println("move: " + b.locomotion)
+}
+func (b Bird) Speak() {
+	fmt.Println("speak: " + b.noise)
+}
+
+func (s Snake) Name() string {
+	return s.name
+}
+func (s Snake) Eat() {
+	fmt.Println("eat: " + s.food)
+}
+func (s Snake) Move() {
+	fmt.Println("move: " + s.locomotion)
+}
+func (s Snake) Speak() {
+	fmt.Println("speak: " + s.noise)
 }
 
 func main() {
-	verdadeiro := true
-	if verdadeiro {
-		fmt.Println("verdadeiro in pt = true in en")
-	} else {
-		fmt.Println("falso in pt = false in en")
-	}
 
-	verdadeiro = false
-	if !verdadeiro {
-		fmt.Println("falso in pt = false in en")
-	}
-
-	if num := 9; num < 0 {
-		fmt.Println(num, "is negative")
-	} else if num < 10 {
-		fmt.Println(num, "has 1 digit")
-	} else {
-		fmt.Println(num, "has multiple digits")
-	}
-
-	haverror, err := seeError(verdadeiro)
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(haverror)
-
-	haverror, err = seeError(true)
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(haverror)
-
-	i := 1
-	for i <= 3 {
-		fmt.Print(i)
-		i = i + 1
-	}
-	fmt.Println()
-
-	j := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	for i := len(j) - 1; i >= 0; i-- {
-		fmt.Print(j[i])
-	}
-	fmt.Println()
-
-	for {
-		fmt.Println("inf loop")
-		break
-	}
-
-	for n := 0; n <= 5; n++ {
-		if n%2 == 0 {
-			continue
-		}
-		fmt.Print(n)
-	}
-	fmt.Println()
-
-	i = 2
-	fmt.Printf("%d in portuguese is ", i)
-	switch i {
-	case 1:
-		fmt.Println("um")
-	case 2:
-		fmt.Println("dois")
-	case 3:
-		fmt.Println("três")
-	}
-
-	color := "white"
-	switch color {
-	case "black", "white":
-		fmt.Println("colorless")
-	default:
-		fmt.Println("colorful")
-	}
-
-	switch {
-	case i < 10:
-		fmt.Println("One digit")
-	default:
-		fmt.Println("More than one digit")
-	}
-
-	whichAnimal := func(i interface{}) {
-		switch t := i.(type) {
-		case cat:
-			fmt.Println("Cat")
-		case dog:
-			fmt.Println("Dog")
-		default:
-			fmt.Printf("%T is unknow to me\n", t)
-		}
-	}
-	cat1 := cat{"cat"}
-	dog1 := dog{"cat"}
-	snake1 := snake{"snake"}
-	whichAnimal(cat1)
-	whichAnimal(dog1)
-	whichAnimal(snake1)
-	fmt.Println()
-	sum := 0
-	for _, num := range j {
-		sum += num
-	}
-	fmt.Println("sum:", sum)
-
-	for i, num := range j {
-		if num == 3 {
-			fmt.Println("num 3 index: ", i)
-		}
-	}
-
-	m := map[int]string{1: "GO", 2: "GOLANG", 3: "GOPHER"}
-	for i, v := range m {
-		fmt.Printf("%d -> %s\n", i, v)
-	}
-
-	for k := range m {
-		fmt.Println("key:", k)
-	}
-
-	for i, c := range "gopher" {
-		fmt.Println(i, c)
+	vaca := &Cow{name: "Vaca", food: "grass", locomotion: "walk", noise: "moo"}
+	andorinha := &Bird{name: "Andorinha", food: "worms", locomotion: "fly", noise: "peep"}
+	cascavel := &Snake{name: "Cascavel", food: "mice", locomotion: "slither", noise: "hsss"}
+	animals := []Animals{vaca, andorinha, cascavel}
+	for _, animal := range animals {
+		fmt.Printf("%v\n", animal.Name())
+		animal.Eat()
+		animal.Move()
+		animal.Speak()
+		fmt.Println()
 	}
 }
