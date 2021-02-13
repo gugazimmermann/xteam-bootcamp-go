@@ -2,10 +2,6 @@
 
 https://github.com/julianosouza/go-crash-course/tree/master/02-structs-and-functions
 
-## Structs and Functions 
+## Pointers
 
-https://gobyexample.com/structs
-
-https://gobyexample.com/variables
-
-https://gobyexample.com/constants
+https://gobyexample.com/pointers

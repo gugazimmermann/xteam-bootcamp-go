@@ -1,59 +1,58 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
-type Animnal struct {
-	name, food, locomotion, noise string
-	hunger                        bool
+func zeroval(ival int) {
+	ival = 0
 }
 
-func seeHunger(a *Animnal) {
-	fmt.Printf("Is the %v hungry? %v\n", a.name, a.hunger)
+func zeroptr(iptr *int) {
+	fmt.Println("iptr:", iptr)
+	fmt.Println("iptr dereference:", *iptr)
+	*iptr = 0
 }
 
-func (a *Animnal) Eat() {
-	fmt.Printf("The %v starts to %v and finds an %v\n", a.name, a.locomotion, a.food)
-	fmt.Printf("The %v ate the %v! %v %v\n", a.name, a.food, a.noise, a.noise)
-	a.hunger = false
+type char struct {
+	name string
 }
 
-func (a *Animnal) Happy(s string) string {
-	if a.hunger == true {
-		msg, err := say(s)
-		if err == nil {
-			fmt.Println(msg)
-		}
-		return fmt.Sprintf("The %s is not happy >:(", a.name)
-	}
-	return fmt.Sprintf("The %s is very happy :))", a.name)
+func changeName1(c char) {
+	c.name = "A2"
 }
 
-func say(s string) (string, error) {
-	if s == "" {
-		return "", errors.New("empty string")
-	}
-	msg := fmt.Sprintf("I'M STUNNING WITH HUNGER! I WANNA %s", s)
-	return msg, nil
+func changeName2(c *char) {
+	c.name = "B2"
+}
+
+func changeName3(c *char) {
+	c.name = "C2"
 }
 
 func main() {
-	bird := &Animnal{"Bird", "earthworm", "fly", "peep", true}
-	snake := &Animnal{"Snake", "mice", "slither", "hsss", true}
+	i := 1
+	fmt.Println("initial:", i)
+	zeroval(i)
+	fmt.Println("zeroval:", i)
+	fmt.Println("pointer:", &i)
+	zeroptr(&i)
+	fmt.Println("zeroptr:", i)
 
 	fmt.Println()
-	fmt.Println(bird.Happy("EAT"))
-	seeHunger(bird)
-	bird.Eat()
-	seeHunger(bird)
-	fmt.Println(bird.Happy(""))
-
 	fmt.Println()
-	fmt.Println(snake.Happy("TO DINNER"))
-	seeHunger(snake)
-	snake.Eat()
-	seeHunger(snake)
-	fmt.Println(snake.Happy(""))
+
+	char1 := new(char)
+	char1.name = "A"
+	fmt.Println("Character name: ", char1.name)
+	changeName1(*char1)
+	fmt.Println("Character name: ", char1.name)
+
+	char2 := &char{"B"}
+	fmt.Println("Character name: ", char2.name)
+	changeName2(char2)
+	fmt.Println("Character name: ", char2.name)
+
+	char3 := char{"C"}
+	fmt.Println("Character name: ", char3.name)
+	changeName3(&char3)
+	fmt.Println("Character name: ", char3.name)
 }
