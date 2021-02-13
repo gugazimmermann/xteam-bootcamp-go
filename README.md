@@ -1,6 +1,6 @@
 # X-Team Go Bootcamp
 
-https://github.com/julianosouza/go-crash-course/tree/master/02-structs-and-functions
+https://github.com/julianosouza/go-crash-course/tree/master/03-pointers
 
 ## Pointers
 
