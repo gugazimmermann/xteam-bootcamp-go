@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -19,12 +20,23 @@ func (a *Animnal) eat() {
 	a.hunger = false
 }
 
-func (a *Animnal) happy() string {
-	msg := fmt.Sprintf("The %s is very happy :))", a.name)
+func (a *Animnal) happy(s string) string {
 	if a.hunger == true {
-		msg = fmt.Sprintf("The %s is not happy >:(", a.name)
+		msg, err := say(s)
+		if err == nil {
+			fmt.Println(msg)
+		}
+		return fmt.Sprintf("The %s is not happy >:(", a.name)
 	}
-	return msg
+	return fmt.Sprintf("The %s is very happy :))", a.name)
+}
+
+func say(s string) (string, error) {
+	if s == "" {
+		return "", errors.New("empty string")
+	}
+	msg := fmt.Sprintf("I'M STUNNING WITH HUNGER! I WANNA %s", s)
+	return msg, nil
 }
 
 func main() {
@@ -32,16 +44,16 @@ func main() {
 	snake := &Animnal{"Snake", "mice", "slither", "hsss", true}
 
 	fmt.Println()
-	fmt.Println(bird.happy())
+	fmt.Println(bird.happy("EAT"))
 	seeHunger(bird)
 	bird.eat()
 	seeHunger(bird)
-	fmt.Println(bird.happy())
+	fmt.Println(bird.happy(""))
 
 	fmt.Println()
-	fmt.Println(snake.happy())
+	fmt.Println(snake.happy("TO DINNER"))
 	seeHunger(snake)
 	snake.eat()
 	seeHunger(snake)
-	fmt.Println(snake.happy())
+	fmt.Println(snake.happy(""))
 }
