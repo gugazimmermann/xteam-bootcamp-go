@@ -5,5 +5,7 @@ https://github.com/julianosouza/go-crash-course/blob/master/01-variable-initiali
 ## Variables 
 
 https://gobyexample.com/values
+
 https://gobyexample.com/variables
+
 https://gobyexample.com/constants
