@@ -1,6 +1,6 @@
 # X-Team Go Bootcamp
 
-https://github.com/julianosouza/go-crash-course/blob/master/01-variable-initialization/main.go
+https://github.com/julianosouza/go-crash-course/tree/master/01-variable-initialization
 
 ## Variables 
 
