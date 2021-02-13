@@ -14,13 +14,13 @@ func seeHunger(a *Animnal) {
 	fmt.Printf("Is the %v hungry? %v\n", a.name, a.hunger)
 }
 
-func (a *Animnal) eat() {
+func (a *Animnal) Eat() {
 	fmt.Printf("The %v starts to %v and finds an %v\n", a.name, a.locomotion, a.food)
 	fmt.Printf("The %v ate the %v! %v %v\n", a.name, a.food, a.noise, a.noise)
 	a.hunger = false
 }
 
-func (a *Animnal) happy(s string) string {
+func (a *Animnal) Happy(s string) string {
 	if a.hunger == true {
 		msg, err := say(s)
 		if err == nil {
@@ -44,16 +44,16 @@ func main() {
 	snake := &Animnal{"Snake", "mice", "slither", "hsss", true}
 
 	fmt.Println()
-	fmt.Println(bird.happy("EAT"))
+	fmt.Println(bird.Happy("EAT"))
 	seeHunger(bird)
-	bird.eat()
+	bird.Eat()
 	seeHunger(bird)
-	fmt.Println(bird.happy(""))
+	fmt.Println(bird.Happy(""))
 
 	fmt.Println()
-	fmt.Println(snake.happy("TO DINNER"))
+	fmt.Println(snake.Happy("TO DINNER"))
 	seeHunger(snake)
-	snake.eat()
+	snake.Eat()
 	seeHunger(snake)
-	fmt.Println(snake.happy(""))
+	fmt.Println(snake.Happy(""))
 }
