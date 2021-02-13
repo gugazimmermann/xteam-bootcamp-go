@@ -26,6 +26,21 @@ func main() {
 	h := "go bootcamp"
 	fmt.Println(h)
 
+	var (
+		i = 12
+		j = 3
+		k = false
+		l = "foo"
+		m float64
+		n float64 = 2.4
+	)
+	fmt.Printf("value: %v type: %T\n", i, i)
+	fmt.Printf("value: %v type: %T\n", j, j)
+	fmt.Printf("value: %v type: %T\n", k, k)
+	fmt.Printf("value: %v type: %T\n", l, l)
+	fmt.Printf("value: %v type: %T\n", m, m)
+	fmt.Printf("value: %v type: %T\n", n, n)
+
 	fmt.Println(x)
 
 	const w = "yeah"
