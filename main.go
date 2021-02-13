@@ -1,24 +1,42 @@
-/*
->main.exe --help
-Usage of main.exe:
--env string
-		environment to be compiled (default "dev")
->
->main.exe -env=prod
-Environment: prod
-*/
 package main
 
-import (
-	"flag"
-	"fmt"
-)
+import "fmt"
+
+const x string = "fixed!"
 
 func main() {
 
-	env := flag.String("env", "dev", "environment to be compiled")
+	var a = "x-team"
+	fmt.Println(a)
 
-	flag.Parse()
+	var b, c, d int = 1, 2, 3
+	fmt.Println(b, c, d)
 
-	fmt.Println("Environment:", *env)
+	var e = true
+	fmt.Println(e)
+
+	var f int
+	fmt.Println(f)
+	fmt.Printf("value: %v type: %T\n", f, f)
+
+	var g string
+	fmt.Println(g)
+	fmt.Printf("value: %v type: %T\n", g, g)
+
+	h := "go bootcamp"
+	fmt.Println(h)
+
+	fmt.Println(x)
+
+	const w = "yeah"
+	fmt.Println(w)
+
+	var y float64 = 666.70
+	fmt.Println(y)
+
+	z := int(y)
+	fmt.Println(z)
+
+	msg := fmt.Sprintf("%d %d %d %v %v %v", b, c, d, a, h, w)
+	fmt.Println(msg)
 }

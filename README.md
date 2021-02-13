@@ -1,7 +1,9 @@
 # X-Team Go Bootcamp
 
-https://github.com/julianosouza/go-crash-course/blob/master/00-program-setup/main.go
+https://github.com/julianosouza/go-crash-course/blob/master/01-variable-initialization/main.go
 
-## Flag
+## Variables 
 
-https://gobyexample.com/command-line-flags
+https://gobyexample.com/values
+https://gobyexample.com/variables
+https://gobyexample.com/constants
