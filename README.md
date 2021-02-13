@@ -1,10 +1,10 @@
 # X-Team Go Bootcamp
 
-https://github.com/julianosouza/go-crash-course/blob/master/01-variable-initialization/main.go
+https://github.com/julianosouza/go-crash-course/tree/master/02-structs-and-functions
 
-## Variables 
+## Structs and Functions 
 
-https://gobyexample.com/values
+https://gobyexample.com/structs
 
 https://gobyexample.com/variables
 

@@ -1,42 +1,47 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-const x string = "fixed!"
+type Animnal struct {
+	name, food, locomotion, noise string
+	hunger                        bool
+}
+
+func seeHunger(a *Animnal) {
+	fmt.Printf("Is the %v hungry? %v\n", a.name, a.hunger)
+}
+
+func (a *Animnal) eat() {
+	fmt.Printf("The %v starts to %v and finds an %v\n", a.name, a.locomotion, a.food)
+	fmt.Printf("The %v ate the %v! %v %v\n", a.name, a.food, a.noise, a.noise)
+	a.hunger = false
+}
+
+func (a *Animnal) happy() string {
+	msg := fmt.Sprintf("The %s is very happy :))", a.name)
+	if a.hunger == true {
+		msg = fmt.Sprintf("The %s is not happy >:(", a.name)
+	}
+	return msg
+}
 
 func main() {
+	bird := &Animnal{"Bird", "earthworm", "fly", "peep", true}
+	snake := &Animnal{"Snake", "mice", "slither", "hsss", true}
 
-	var a = "x-team"
-	fmt.Println(a)
+	fmt.Println()
+	fmt.Println(bird.happy())
+	seeHunger(bird)
+	bird.eat()
+	seeHunger(bird)
+	fmt.Println(bird.happy())
 
-	var b, c, d int = 1, 2, 3
-	fmt.Println(b, c, d)
-
-	var e = true
-	fmt.Println(e)
-
-	var f int
-	fmt.Println(f)
-	fmt.Printf("value: %v type: %T\n", f, f)
-
-	var g string
-	fmt.Println(g)
-	fmt.Printf("value: %v type: %T\n", g, g)
-
-	h := "go bootcamp"
-	fmt.Println(h)
-
-	fmt.Println(x)
-
-	const w = "yeah"
-	fmt.Println(w)
-
-	var y float64 = 666.70
-	fmt.Println(y)
-
-	z := int(y)
-	fmt.Println(z)
-
-	msg := fmt.Sprintf("%d %d %d %v %v %v", b, c, d, a, h, w)
-	fmt.Println(msg)
+	fmt.Println()
+	fmt.Println(snake.happy())
+	seeHunger(snake)
+	snake.eat()
+	seeHunger(snake)
+	fmt.Println(snake.happy())
 }
