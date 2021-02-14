@@ -55,4 +55,30 @@ func main() {
 	fmt.Println("Character name: ", char3.name)
 	changeName3(&char3)
 	fmt.Println("Character name: ", char3.name)
+
+	fmt.Println()
+	fmt.Println()
+
+	mySlice := []int{1, 2, 3}
+	fmt.Println(mySlice)
+	sliceAppend(mySlice)
+	fmt.Println(mySlice)
+	sliceChange(mySlice)
+	fmt.Println(mySlice)
+}
+
+/*
+the contents of a slice argument can be modified by a function, but its header cannot.
+The length stored in the slice variable is not modified by the call to the function,
+since the function is passed a copy of the slice header, not the original.
+Thus if we want to write a function that modifies the header, we must return it as a
+result parameter, just as we have done here.
+*/
+func sliceAppend(a []int) {
+	a = append(a, 4, 5, 6)
+	fmt.Println(a)
+}
+
+func sliceChange(a []int) {
+	a[2] = 9
 }
