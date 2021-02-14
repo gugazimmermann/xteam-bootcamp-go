@@ -2,6 +2,16 @@ package main
 
 import "fmt"
 
+type Animals interface {
+	Name() string
+	Eat()
+	Move()
+	Speak()
+	Desc(s string)
+	Times() int
+	Inc()
+}
+
 type Cow struct {
 	name, food, locomotion, noise string
 	times                         int
@@ -16,14 +26,9 @@ type Snake struct {
 	name, food, locomotion, noise string
 	times                         int
 }
-type Animals interface {
-	Name() string
-	Eat()
-	Move()
-	Speak()
-	Desc(s string)
-	Times() int
-	Inc()
+
+type Fish struct { //Embedding
+	*Snake
 }
 
 func (a Cow) Name() string {
@@ -92,11 +97,11 @@ func (a *Snake) Inc() {
 	a.times++
 }
 
-func NewBird() *Bird {
-	return &Bird{name: "Andorinha", food: "worms", locomotion: "flying", noise: "peep"}
+func NewBird() *Bird { //constructor
+	return &Bird{name: "Andorinha", food: "fruit", locomotion: "flying", noise: "peep"}
 }
 
-func NewSnake(n string) Animals {
+func NewSnake(n string) Animals { //constructor
 	s := new(Snake)
 	s.name = n
 	s.food = "mice"
@@ -105,20 +110,38 @@ func NewSnake(n string) Animals {
 	return s
 }
 
+func testInterface1(i interface{}) {
+	switch i.(type) {
+	case *Cow:
+		fmt.Println("It's a Cow!")
+	case *Bird:
+		fmt.Println("Is a Bird!")
+	case *Snake:
+		fmt.Println("Is a Snake!")
+	case *Fish:
+		fmt.Println("Is a Fish!")
+	default:
+		fmt.Println("Type is unknown")
+	}
+}
+
 func main() {
 	vaca := &Cow{name: "Vaca", food: "grass", locomotion: "walking", noise: "moo"}
-	andorinha := NewBird()           //constructor
-	cascavel := NewSnake("Cascavel") //constructor
+	andorinha := NewBird()                                                                                 //constructor
+	cascavel := NewSnake("Cascavel")                                                                       //constructor
+	bagre := &Fish{Snake: &Snake{name: "Bagre", food: "earthworm", locomotion: "swims", noise: "bubbles"}} //embedding
 
-	animals := []Animals{vaca, andorinha, cascavel}
+	animals := []Animals{vaca, andorinha, cascavel, bagre}
 	for _, a := range animals {
 		a.Desc(fmt.Sprintf("%v is a animal!", a.Name()))
+		testInterface1(a)
 		fmt.Printf("%v eats %v times\n", a.Name(), a.Times())
 		a.Move()
 		a.Eat()
 		a.Inc()
 		fmt.Printf("%v eats %v times\n", a.Name(), a.Times())
 		a.Speak()
+		fmt.Println()
 		fmt.Println()
 	}
 }
