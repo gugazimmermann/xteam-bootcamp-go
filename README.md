@@ -1,9 +1,7 @@
 # X-Team Go Bootcamp
 
-https://github.com/julianosouza/go-crash-course/tree/master/05-interfaces
+https://github.com/julianosouza/go-crash-course/tree/master/07-testing
 
 ## Interfaces
 
-https://gobyexample.com/interfaces
-
-https://gobyexample.com/methods
+https://gobyexample.com/testing
