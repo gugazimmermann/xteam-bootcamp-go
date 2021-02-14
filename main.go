@@ -56,6 +56,20 @@ func main() {
 	}
 	fmt.Println(haverror)
 
+	xMap := make(map[string]int)
+	xMap["first"] = 1
+	xMap["second"] = 2
+	_, ok := xMap["third"]
+	fmt.Println(ok)
+	_, ok = xMap["first"]
+	fmt.Println(ok)
+	if x, ok := xMap["second"]; ok {
+		fmt.Println(x)
+	}
+	if x, ok := xMap["third"]; ok {
+		fmt.Println(x)
+	}
+
 	i := 1
 	for i <= 3 {
 		fmt.Print(i)
