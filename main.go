@@ -124,7 +124,20 @@ func main() {
 	whichAnimal(cat1)
 	whichAnimal(dog1)
 	whichAnimal(snake1)
+
+	fall := 2
+	switch fall {
+	case 2:
+		fmt.Print("2 and ")
+		fallthrough
+	case 1:
+		fmt.Println("fallthrough to 1")
+	default:
+		fmt.Println("0")
+	}
+
 	fmt.Println()
+
 	sum := 0
 	for _, num := range j {
 		sum += num
