@@ -1,75 +1,49 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type Cow struct {
-	name, food, locomotion, noise string
-}
-
-type Bird struct {
-	name, food, locomotion, noise string
-}
-
-type Snake struct {
-	name, food, locomotion, noise string
-}
-type Animals interface {
-	Name() string
-	Eat()
-	Move()
-	Speak()
+func routine1(i int, c *int) {
+	for x := 1; x <= 10; x++ {
+		*c++
+		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
+	}
 }
 
-func (c Cow) Name() string {
-	return c.name
-}
-func (c Cow) Eat() {
-	fmt.Println("eat: " + c.food)
-}
-func (c Cow) Move() {
-	fmt.Println("move: " + c.locomotion)
-}
-func (c Cow) Speak() {
-	fmt.Println("speak: " + c.noise)
+func routine2(i int, c *int) {
+	for x := 1; x <= 10; x++ {
+		*c++
+		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
+	}
 }
 
-func (b Bird) Name() string {
-	return b.name
-}
-func (b Bird) Eat() {
-	fmt.Println("eat: " + b.food)
-}
-func (b Bird) Move() {
-	fmt.Println("move: " + b.locomotion)
-}
-func (b Bird) Speak() {
-	fmt.Println("speak: " + b.noise)
-}
-
-func (s Snake) Name() string {
-	return s.name
-}
-func (s Snake) Eat() {
-	fmt.Println("eat: " + s.food)
-}
-func (s Snake) Move() {
-	fmt.Println("move: " + s.locomotion)
-}
-func (s Snake) Speak() {
-	fmt.Println("speak: " + s.noise)
-}
+// func routine2(i int, c *int, wg *sync.WaitGroup) {
+// 	defer wg.Done()
+// 	for x := 1; x <= 10; x++ {
+// 		*c++
+// 		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
+// 	}
+// }
 
 func main() {
+	counter := 0
+	routine1(1, &counter)
+	routine1(2, &counter)
+	fmt.Printf("Final Counter (should be 20): %d\n", counter)
+	fmt.Println()
 
-	vaca := &Cow{name: "Vaca", food: "grass", locomotion: "walk", noise: "moo"}
-	andorinha := &Bird{name: "Andorinha", food: "worms", locomotion: "fly", noise: "peep"}
-	cascavel := &Snake{name: "Cascavel", food: "mice", locomotion: "slither", noise: "hsss"}
-	animals := []Animals{vaca, andorinha, cascavel}
-	for _, animal := range animals {
-		fmt.Printf("%v\n", animal.Name())
-		animal.Eat()
-		animal.Move()
-		animal.Speak()
-		fmt.Println()
-	}
+	counter = 0
+	go routine2(1, &counter)
+	go routine2(2, &counter)
+	fmt.Printf("Final Counter (should be 20): %d\n", counter)
+
+	// wg := &sync.WaitGroup{}
+	// counter = 0
+	// wg.Add(1)
+	// go routine2(1, &counter, wg)
+	// wg.Add(1)
+	// go routine2(2, &counter, wg)
+	// wg.Wait()
+	// fmt.Printf("Final Counter (should be 2): %d\n", counter)
 }

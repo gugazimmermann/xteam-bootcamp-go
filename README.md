@@ -2,6 +2,6 @@
 
 https://github.com/julianosouza/go-crash-course/tree/master/05-interfaces
 
-## Interfaces
+## Concyrrency
 
-https://gobyexample.com/interfaces
+https://gobyexample.com/goroutines
