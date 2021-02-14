@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 const x string = "fixed!"
 
@@ -9,11 +13,35 @@ func main() {
 	var a = "x-team"
 	fmt.Println(a)
 
+	var num string
+	var numint int
+	num = "42"
+	numint, _ = strconv.Atoi(num)
+	fmt.Println(numint)
+
 	var b, c, d int = 1, 2, 3
 	fmt.Println(b, c, d)
 
+	var numint2 int
+	var numstring string
+	numint2 = 42
+	numstring = strconv.Itoa(numint2)
+	fmt.Println(numstring)
+
 	var e = true
 	fmt.Println(e)
+
+	var verdadeiro string
+	var ver bool
+	verdadeiro = "True"
+	ver, _ = strconv.ParseBool(verdadeiro)
+	fmt.Println(ver)
+
+	var falsostring string
+	var falso bool
+	falso = false
+	falsostring = strconv.FormatBool(falso)
+	fmt.Println(falsostring)
 
 	var f int
 	fmt.Println(f)
@@ -52,6 +80,11 @@ func main() {
 	z := int(y)
 	fmt.Println(z)
 
+	hw := "good bye world"
+	gw := strings.Replace(hw, "good bye", "hello", -1)
+	fmt.Println(gw)
+
 	msg := fmt.Sprintf("%d %d %d %v %v %v", b, c, d, a, h, w)
 	fmt.Println(msg)
+
 }
