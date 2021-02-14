@@ -2,48 +2,74 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"sync"
 )
 
-func routine1(i int, c *int) {
-	for x := 1; x <= 10; x++ {
-		*c++
-		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
-	}
-}
-
-func routine2(i int, c *int) {
-	for x := 1; x <= 10; x++ {
-		*c++
-		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
-	}
-}
-
-// func routine2(i int, c *int, wg *sync.WaitGroup) {
-// 	defer wg.Done()
-// 	for x := 1; x <= 10; x++ {
-// 		*c++
-// 		fmt.Printf("Routine %d - Incremented value - now %d.\n", i, *c)
-// 	}
-// }
-
 func main() {
-	counter := 0
-	routine1(1, &counter)
-	routine1(2, &counter)
-	fmt.Printf("Final Counter (should be 20): %d\n", counter)
+	wg := &sync.WaitGroup{}
+	wg.Add(1)
+	go hello(wg)
+	fmt.Println("Olá from main")
+	wg.Wait()
+
 	fmt.Println()
 
-	counter = 0
-	go routine2(1, &counter)
-	go routine2(2, &counter)
-	fmt.Printf("Final Counter (should be 20): %d\n", counter)
+	quitSignal := make(chan bool)
+	go sayHelloFromChannel(quitSignal)
+	fmt.Println("Olá from main again")
+	<-quitSignal
 
-	// wg := &sync.WaitGroup{}
-	// counter = 0
-	// wg.Add(1)
-	// go routine2(1, &counter, wg)
-	// wg.Add(1)
-	// go routine2(2, &counter, wg)
-	// wg.Wait()
-	// fmt.Printf("Final Counter (should be 2): %d\n", counter)
+	fmt.Println()
+
+	translatorSignal := make(chan string)
+
+	lang := "german"
+	go sayHelloInOtherLanguage(translatorSignal, lang, "Hello from a channel")
+	fmt.Printf("Say in %v: ", lang)
+	ts := <-translatorSignal
+	fmt.Println("_", ts)
+
+	lang = "spanish"
+	go sayHelloInOtherLanguage(translatorSignal, lang, "Hello from a channel")
+	fmt.Printf("Say in %v: ", lang)
+	ts = <-translatorSignal
+	fmt.Println("_", ts)
+
+	fmt.Println()
+
+	anyChan := make(chan bool)
+	anyText := "Hello from anonymous function"
+	go func() {
+		fmt.Println(anyText)
+		anyChan <- false
+	}()
+	<-anyChan
+
+	fmt.Println()
+}
+
+func hello(wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println("Hello from a new goroutine")
+}
+
+func sayHelloFromChannel(qs chan bool) {
+	fmt.Println("Hola desde un canal")
+	qs <- true
+}
+
+func sayHelloInOtherLanguage(ts chan string, lang, text string) {
+	var translated string
+	switch lang {
+	case "german":
+		trans := strings.NewReplacer("Hello", "Hallo", "from", "von", "a", "einem", "channel", "kanal")
+		translated = trans.Replace(text)
+	case "spanish":
+		trans := strings.NewReplacer("Hello", "Hola", "from", "desde", "a", "un", "channel", "canal")
+		translated = trans.Replace(text)
+	default:
+		translated = text
+	}
+	ts <- translated
 }
