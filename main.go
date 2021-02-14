@@ -56,4 +56,19 @@ func main() {
 	snake.Eat()
 	seeHunger(snake)
 	fmt.Println(snake.Happy(""))
+
+	fmt.Println()
+
+	nuns := []int{1, 3, 5}
+	variadic := Total(nuns...)
+	fmt.Println(variadic)
+}
+
+//variadic
+func Total(args ...int) int {
+	total := 0
+	for _, v := range args {
+		total += v
+	}
+	return total
 }
