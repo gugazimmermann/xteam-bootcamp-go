@@ -2,7 +2,6 @@ package controller
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/gugazimmermann/xteam-bootcamp-go/service"
@@ -21,7 +20,6 @@ func UserGet(r *http.Request) (int, string) {
 func UserPost(r *http.Request) (int, string) {
 	var user service.User
 	json.NewDecoder(r.Body).Decode(&user)
-	fmt.Println(user)
 	if user.Email != "" && user.Name != "" {
 		return service.AddOne(user)
 	}
