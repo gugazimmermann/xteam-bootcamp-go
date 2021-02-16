@@ -2,6 +2,8 @@
 
 https://github.com/julianosouza/go-crash-course/tree/master/03-pointers
 
-## Pointers
+## HTTP
 
-https://gobyexample.com/pointers
+https://gobyexample.com/http-clients
+
+https://gobyexample.com/http-servers
